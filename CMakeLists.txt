@@ -36,9 +36,11 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 endif()
 
 if (NOT ENTT_ROOT)
-    message(STATUS "ENTT_ROOT not specified, setting defult: ./entt")
-    set(ENTT_ROOT "${CMAKE_SOURCE_DIR}/entt/src")
+    message(STATUS "ENTT_ROOT not specified, setting defult: ${CMAKE_SOURCE_DIR}/entt")
+    set(ENTT_ROOT "${CMAKE_SOURCE_DIR}/entt")
 endif()
-include_directories (${ENTT_ROOT})
+
+add_subdirectory(${ENTT_ROOT})
+include_directories("${ENTT_ROOT}/src/")
 
 add_executable(entt_samples main.cpp)
