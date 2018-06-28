@@ -45,6 +45,10 @@ if (NOT ENTT_ROOT)
 endif()
 
 add_subdirectory(${ENTT_ROOT})
-include_directories("${ENTT_ROOT}/src/")
+include_directories("${ENTT_ROOT}/src")
 
-add_executable(entt_samples main.cpp)
+add_subdirectory("${CMAKE_SOURCE_DIR}/src")
+include_directories("${CMAKE_SOURCE_DIR}/src")
+
+add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries(${PROJECT_NAME} entt_overview)
