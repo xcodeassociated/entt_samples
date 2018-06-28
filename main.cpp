@@ -1,5 +1,7 @@
 #include "overview/components.hpp"
 #include "overview/entt_overview.hpp"
+#include "scene_graph/scene_graph.hpp"
+
 #include <entt/entt.hpp>
 #include <iostream>
 #include <cstdint>
